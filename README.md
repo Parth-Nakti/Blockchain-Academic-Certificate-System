@@ -34,7 +34,7 @@ If any data is altered, the blockchain becomes invalid.
 
 ## 👨‍💻 Team Members
 - Parth Nakti
-- (Partner Name)
+- Pranav
 
 ## 📈 Future Enhancements
 - GUI interface
