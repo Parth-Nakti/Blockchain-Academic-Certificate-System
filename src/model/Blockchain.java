@@ -12,10 +12,20 @@ public class Blockchain {
     }
 
     private Block createGenesisBlock() {
-        return new Block(0, "Genesis Block", "0");
+
+        Certificate genesisCertificate = new Certificate(
+            "GENESIS",
+            "System",
+            "000",
+            "Genesis Block",
+            0,
+            "Blockchain"
+        );
+    
+        return new Block(0, genesisCertificate, "0");
     }
 
-    public void addBlock(String data) {
+    public void addBlock(Certificate data) {
         Block previousBlock = chain.get(chain.size() - 1);
         Block newBlock = new Block(chain.size(), data, previousBlock.getHash());
         chain.add(newBlock);

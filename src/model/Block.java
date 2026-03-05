@@ -8,11 +8,11 @@ public class Block {
 
     private int index;
     private String timestamp;
-    private String data;  // Certificate data
+    private Certificate data;
     private String previousHash;
     private String hash;
 
-    public Block(int index, String data, String previousHash) {
+    public Block(int index, Certificate data, String previousHash) {
         this.index = index;
         this.timestamp = LocalDateTime.now().toString();
         this.data = data;
@@ -21,7 +21,7 @@ public class Block {
     }
 
     public String calculateHash() {
-        String input = index + timestamp + data + previousHash;
+        String input = index + timestamp + data.toString() + previousHash;
         return HashUtil.applySHA256(input);
     }
 
@@ -33,7 +33,7 @@ public class Block {
         return previousHash;
     }
 
-    public String getData() {
+    public Certificate getData() {
         return data;
     }
 
@@ -41,7 +41,7 @@ public class Block {
         return "Block{" +
                 "index=" + index +
                 ", timestamp='" + timestamp + '\'' +
-                ", data='" + data + '\'' +
+                ", certificate=" + data +
                 ", previousHash='" + previousHash + '\'' +
                 ", hash='" + hash + '\'' +
                 '}';
