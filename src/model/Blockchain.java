@@ -21,7 +21,7 @@ public class Blockchain {
             0,
             "Blockchain"
         );
-    
+
         return new Block(0, genesisCertificate, "0");
     }
 
@@ -38,7 +38,9 @@ public class Blockchain {
     }
 
     public boolean isChainValid() {
+
         for (int i = 1; i < chain.size(); i++) {
+
             Block current = chain.get(i);
             Block previous = chain.get(i - 1);
 
@@ -49,7 +51,13 @@ public class Blockchain {
             if (!current.getHash().equals(current.calculateHash())) {
                 return false;
             }
+
         }
+
         return true;
+    }
+
+    public ArrayList<Block> getChain() {
+        return chain;
     }
 }

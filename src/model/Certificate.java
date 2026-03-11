@@ -44,15 +44,20 @@ public class Certificate {
         return university;
     }
 
+    // Needed for tampering demonstration
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
     @Override
-public String toString() {
-    return "Certificate{" +
-            "id='" + certificateId + '\'' +
-            ", name='" + studentName + '\'' +
-            ", roll='" + rollNumber + '\'' +
-            ", course='" + course + '\'' +
-            ", marks=" + marks +
-            ", university='" + university + '\'' +
-            '}';
-}
+    public String toString() {
+        return "Certificate{" +
+                "ID='" + certificateId + '\'' +
+                ", Name='" + studentName + '\'' +
+                ", Roll='" + rollNumber + '\'' +
+                ", Course='" + course + '\'' +
+                ", Marks=" + marks +
+                ", University='" + university + '\'' +
+                '}';
+    }
 }

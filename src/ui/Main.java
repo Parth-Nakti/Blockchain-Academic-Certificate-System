@@ -17,7 +17,8 @@ public class Main {
             System.out.println("1. Add Certificate");
             System.out.println("2. View Blockchain");
             System.out.println("3. Verify Blockchain");
-            System.out.println("4. Exit");
+            System.out.println("4. Tamper Blockchain (Demo)");
+            System.out.println("5. Exit");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -68,12 +69,30 @@ public class Main {
 
                 case 4:
 
-                    System.out.println("Exiting...");
+                    if(blockchain.getChain().size() > 1) {
+
+                        System.out.println("Tampering with Block 1...");
+
+                        blockchain.getChain().get(1).getData().setStudentName("Hacker");
+
+                        System.out.println("Block data modified!");
+
+                    } else {
+
+                        System.out.println("No block available to tamper.");
+
+                    }
+
+                    break;
+
+                case 5:
+
+                    System.out.println("Exiting program...");
                     return;
 
                 default:
 
-                    System.out.println("Invalid choice");
+                    System.out.println("Invalid choice. Try again.");
 
             }
 
